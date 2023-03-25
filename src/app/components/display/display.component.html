@@ -1,0 +1,35 @@
+<div class="container">
+    <H1>All Wallet details:</H1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Balance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let emp of wallet">
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.balance}}</td>
+                <td>
+                    <input type="button" class="btn btn-info" (click)="updateEmployee(emp)" value="Update">
+                
+                    <input type="button" class="btn btn-danger" (click)="deleteEmployee(emp.id)" value="Delete">
+                
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <div *ngIf="msg" class="alert alert-success" >
+        <p class="">{{msg}}</p>
+    </div>
+    <div *ngIf="errorMsg" class="alert alert-danger">
+        <p>{{errorMsg}}</p> 
+    </div>
+</div>
